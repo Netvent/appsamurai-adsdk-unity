@@ -62,6 +62,13 @@ public class BannerScene : MonoBehaviour {
         bannerView.OnAdLeavingApplication += HandleAdLeavingApplication;
     }
 
+    private AdRequest CreateAdRequest()
+    {
+        return new AdRequest.Builder()
+            .AddTestDevice("YXBwc20tNzliNDU5YzVlZWM3NzA4Zg==")
+            .Build();
+    }
+
     public void LoadAd()
     {
         if (bannerView != null)
@@ -69,7 +76,7 @@ public class BannerScene : MonoBehaviour {
             Debug.Log("Banner: Loading Ad");
             // Send an ad request
             // Banner will be shown automatically when the ad is loaded
-            bannerView.LoadAd();
+            bannerView.LoadAd(CreateAdRequest());
         }
         else
         {

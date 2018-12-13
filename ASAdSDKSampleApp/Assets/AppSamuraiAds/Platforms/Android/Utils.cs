@@ -71,15 +71,16 @@ namespace AppSamuraiAds.Android
         public static AndroidJavaObject GetAdRequestJavaObject(AdRequest request)
         {
             AndroidJavaObject adRequestBuilder = new AndroidJavaObject(AdRequestBuilderClassName);
-            // Denote that the request is coming from this Unity plugin.
-            adRequestBuilder.Call<AndroidJavaObject>(
-                    "setRequestAgent",
-                    "unity-beta");
-            AndroidJavaObject bundle = new AndroidJavaObject(BundleClassName);
-            bundle.Call("putString", "is_unity", "1");
+
+
+            foreach (string deviceId in request.TestDevices)
+            {
+                adRequestBuilder.Call<AndroidJavaObject>("addTestDevice", deviceId);
+            }
 
             return adRequestBuilder.Call<AndroidJavaObject>("build");
         }
+
         #endregion
     }
 }
