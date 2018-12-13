@@ -1,0 +1,20 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AppSamuraiAds/Platforms/Android/BannerClient.cs">
+    <Files>
+      <File FileName="Assets/Scripts/MainSceneScript.cs" Line="17" Column="6" />
+      <File FileName="Assets/Scripts/BannerScene.cs" Line="37" Column="32" />
+      <File FileName="Assets/Scripts/InterstitialScene.cs" Line="96" Column="54" />
+      <File FileName="Assets/Scripts/RewardedVideoScene.cs" Line="6" Column="48" />
+      <File FileName="Assets/AppSamuraiAds/Api/BannerView.cs" Line="71" Column="29" />
+      <File FileName="Assets/AppSamuraiAds/Common/IBannerClient.cs" Line="43" Column="14" />
+      <File FileName="Assets/AppSamuraiAds/Platforms/Android/BannerClient.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,4 @@
+#Thu Dec 13 15:21:54 EET 2018
+base.0=/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/transforms/dex/release/0
+path.0=classes.dex
+renamed.0=classes.dex
