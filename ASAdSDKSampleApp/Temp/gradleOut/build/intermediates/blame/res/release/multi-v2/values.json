@@ -4,7 +4,7 @@
             "outputFile": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/incremental/mergeReleaseResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/7595f11578ed8b96e9599e56cb852126/res/values/values.xml",
+                    "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/e7521fc1758911448ff6e2b1876b4ded/res/values/values.xml",
                     "from": {
                         "startLines": "5,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4",

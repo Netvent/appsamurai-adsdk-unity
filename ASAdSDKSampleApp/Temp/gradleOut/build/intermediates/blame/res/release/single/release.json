@@ -149,7 +149,7 @@
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/drawable_close.png.flat",
-        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/7595f11578ed8b96e9599e56cb852126/res/drawable/close.png"
+        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/e7521fc1758911448ff6e2b1876b4ded/res/drawable/close.png"
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/layout_notification_template_part_time.xml.flat",
@@ -257,7 +257,7 @@
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/drawable_pause.png.flat",
-        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/7595f11578ed8b96e9599e56cb852126/res/drawable/pause.png"
+        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/e7521fc1758911448ff6e2b1876b4ded/res/drawable/pause.png"
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/color_abc_tint_seek_thumb.xml.flat",
@@ -349,7 +349,7 @@
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/drawable_rounded_corner.xml.flat",
-        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/7595f11578ed8b96e9599e56cb852126/res/drawable/rounded_corner.xml"
+        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/e7521fc1758911448ff6e2b1876b4ded/res/drawable/rounded_corner.xml"
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/drawable-xhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
@@ -477,7 +477,7 @@
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/drawable_volume_on.png.flat",
-        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/7595f11578ed8b96e9599e56cb852126/res/drawable/volume_on.png"
+        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/e7521fc1758911448ff6e2b1876b4ded/res/drawable/volume_on.png"
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/drawable-mdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -1073,7 +1073,7 @@
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/drawable_volume_off.png.flat",
-        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/7595f11578ed8b96e9599e56cb852126/res/drawable/volume_off.png"
+        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/e7521fc1758911448ff6e2b1876b4ded/res/drawable/volume_off.png"
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/drawable-hdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
@@ -1229,11 +1229,11 @@
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/layout_activity_video_ad.xml.flat",
-        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/7595f11578ed8b96e9599e56cb852126/res/layout/activity_video_ad.xml"
+        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/e7521fc1758911448ff6e2b1876b4ded/res/layout/activity_video_ad.xml"
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/drawable_play.png.flat",
-        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/7595f11578ed8b96e9599e56cb852126/res/drawable/play.png"
+        "source": "/Users/olcayay/.gradle/caches/transforms-1/files-1.1/appsamurai-adsdk-0.3.1.aar/e7521fc1758911448ff6e2b1876b4ded/res/drawable/play.png"
     },
     {
         "merged": "/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/res/merged/release/anim_abc_tooltip_enter.xml.flat",

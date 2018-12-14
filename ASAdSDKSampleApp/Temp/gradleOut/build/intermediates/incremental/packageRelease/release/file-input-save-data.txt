@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Dec 13 17:05:15 EET 2018
+#Fri Dec 14 11:40:21 EET 2018
 60.set=ASSET
 52.set=ASSET
 53.base=/Users/olcayay/dev/appsamurai/appsamurai-adsdk-unity/ASAdSDKSampleApp/Temp/gradleOut/build/intermediates/assets/release

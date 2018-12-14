@@ -46,13 +46,23 @@ public class InterstitialScene : MonoBehaviour {
         interstitial.OnAdLeavingApplication += HandleInterstitialAdLeavingApplication;
     }
 
+    private AdRequest CreateAdRequest()
+    {
+        return new AdRequest.Builder()
+            .AddTestDevice("YXBwc20tNzliNDU5YzVlZWM3NzA4Zg==")
+            .AddAdFormat(AdFormat.HTML)
+            .AddAdFormat(AdFormat.VIDEO)
+            .AddAdFormat(AdFormat.PLAYABLE)
+            .Build();
+    }
+
     public void LoadAd()
     {
         if (interstitial != null)
         {
             Debug.Log("Interstitial: Loading Ad");
             // Send an ad request
-            interstitial.LoadAd();
+            interstitial.LoadAd(CreateAdRequest());
         }
         else
         {

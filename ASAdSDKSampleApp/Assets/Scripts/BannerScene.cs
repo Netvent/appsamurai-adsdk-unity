@@ -66,6 +66,8 @@ public class BannerScene : MonoBehaviour {
     {
         return new AdRequest.Builder()
             .AddTestDevice("YXBwc20tNzliNDU5YzVlZWM3NzA4Zg==")
+            //.AddAdFormat(AdFormat.HTML)
+            //.AddAdFormat(AdFormat.VIDEO)
             .Build();
     }
 

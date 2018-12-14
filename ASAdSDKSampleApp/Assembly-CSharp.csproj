@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AppSamuraiAds\Api\AdFailedToLoadEventArgs.cs" />
+    <Compile Include="Assets\AppSamuraiAds\Api\AdFormat.cs" />
     <Compile Include="Assets\AppSamuraiAds\Api\AdPosition.cs" />
     <Compile Include="Assets\AppSamuraiAds\Api\AdRequest.cs" />
     <Compile Include="Assets\AppSamuraiAds\Api\AdSize.cs" />

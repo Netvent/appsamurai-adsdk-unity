@@ -1,17 +1,14 @@
 ﻿<Properties StartupConfiguration="{63D83585-742C-6676-A398-DB19BF9118C0}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AppSamuraiAds/Platforms/Android/Utils.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AppSamuraiAds/Api/AdFormat.cs">
     <Files>
-      <File FileName="Assets/Scripts/MainSceneScript.cs" Line="17" Column="6" />
-      <File FileName="Assets/Scripts/BannerScene.cs" Line="70" Column="1" />
-      <File FileName="Assets/Scripts/InterstitialScene.cs" Line="39" Column="37" />
-      <File FileName="Assets/Scripts/RewardedVideoScene.cs" Line="54" Column="1" />
-      <File FileName="Assets/AppSamuraiAds/Api/BannerView.cs" Line="71" Column="29" />
-      <File FileName="Assets/AppSamuraiAds/Common/IBannerClient.cs" Line="43" Column="14" />
-      <File FileName="Assets/AppSamuraiAds/Platforms/Android/BannerClient.cs" Line="52" Column="59" />
-      <File FileName="Assets/AppSamuraiAds/Api/RewardBasedVideoAd.cs" Line="1" Column="1" />
-      <File FileName="Assets/AppSamuraiAds/Api/AdRequest.cs" Line="37" Column="1" />
-      <File FileName="Assets/AppSamuraiAds/Common/IAdLoaderClient.cs" Line="1" Column="1" />
-      <File FileName="Assets/AppSamuraiAds/Platforms/Android/Utils.cs" Line="71" Column="41" />
+      <File FileName="Assets/AppSamuraiAds/Platforms/Android/Utils.cs" Line="79" Column="14" />
+      <File FileName="Assets/AppSamuraiAds/Api/AdRequest.cs" Line="26" Column="35" />
+      <File FileName="Assets/Scripts/BannerScene.cs" Line="71" Column="1" />
+      <File FileName="Assets/AppSamuraiAds/Api/BannerView.cs" Line="48" Column="24" />
+      <File FileName="Assets/AppSamuraiAds/Common/IBannerClient.cs" Line="31" Column="14" />
+      <File FileName="Assets/AppSamuraiAds/Platforms/Android/BannerClient.cs" Line="52" Column="72" />
+      <File FileName="Assets/Scripts/InterstitialScene.cs" Line="48" Column="5" />
+      <File FileName="Assets/AppSamuraiAds/Api/AdFormat.cs" Line="10" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

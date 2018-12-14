@@ -78,6 +78,11 @@ namespace AppSamuraiAds.Android
                 adRequestBuilder.Call<AndroidJavaObject>("addTestDevice", deviceId);
             }
 
+            foreach (string adFormat in request.AdFormats)
+            {
+                adRequestBuilder.Call<AndroidJavaObject>("addAdFormat", adFormat);
+            }
+
             return adRequestBuilder.Call<AndroidJavaObject>("build");
         }
 
