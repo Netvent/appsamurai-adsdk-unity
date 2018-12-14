@@ -15,6 +15,7 @@ public class RewardedVideoScene : MonoBehaviour {
     private string videoAdUnitId = "nn3gMUJH1PkMnqQJcAxStg";
 #else
     private string appId = "unexpected_platform";
+    private string videoAdUnitId = "unexpected_adunit_id";
 #endif
 
     void Start()

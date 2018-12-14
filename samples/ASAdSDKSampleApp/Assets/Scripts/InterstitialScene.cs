@@ -15,6 +15,7 @@ public class InterstitialScene : MonoBehaviour {
     private string interstitialAdUnitId = "nn3gMEJE1PkMnJQKXxkL7Q";
 #else
     private string appId = "unexpected_platform";
+    private string interstitialAdUnitId = "unexpected_adunit_id";
 #endif
 
     void Start () {

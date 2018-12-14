@@ -15,6 +15,7 @@ public class BannerScene : MonoBehaviour {
     private string bannerAdUnitId = "nn3gP0JF1PkMm593dmIB5Q";
 #else
     private string appId = "unexpected_platform";
+    private string bannerAdUnitId = "unexpected_adunit_id";
 #endif
 
     void Start () {
