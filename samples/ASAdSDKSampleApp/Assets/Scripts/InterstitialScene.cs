@@ -9,13 +9,13 @@ public class InterstitialScene : MonoBehaviour {
 
 #if UNITY_ANDROID
     private string appId = "gJIwJ-T0Kst86Mw3JIk-1A";
-    private string interstitialAdUnitId = "nnrgOQ8JmbRCupYRQyNQwg";
+    private string adUnitId = "nnrgOQ8JmbRCupYRQyNQwg";
 #elif (UNITY_5 && UNITY_IOS) || UNITY_IPHONE
     private string appId = "gJUwJuTuP-t1wsM1DolK_A";
-    private string interstitialAdUnitId = "nn3gMEJE1PkMnJQKXxkL7Q";
+    private string adUnitId = "nn3gMEJE1PkMnJQKXxkL7Q";
 #else
     private string appId = "unexpected_platform";
-    private string interstitialAdUnitId = "unexpected_adunit_id";
+    private string adUnitId = "unexpected_platform";
 #endif
 
     void Start () {
@@ -33,7 +33,7 @@ public class InterstitialScene : MonoBehaviour {
     {
         Debug.Log("Interstitial: Creating Ad");
         // Create an interstitial
-        interstitial = new InterstitialAd(interstitialAdUnitId);
+        interstitial = new InterstitialAd(adUnitId);
 
         // Called when an ad request has successfully loaded.
         interstitial.OnAdLoaded += HandleInterstitialLoaded;

@@ -9,13 +9,13 @@ public class RewardedVideoScene : MonoBehaviour {
 
 #if UNITY_ANDROID
     private string appId = "gJIwJ-T0Kst86Mw3JIk-1A";
-    private string videoAdUnitId = "nnrgOQwJmrRCuppxWA0Q_A";
+    private string adUnitId = "nnrgOQwJmrRCuppxWA0Q_A";
 #elif (UNITY_5 && UNITY_IOS) || UNITY_IPHONE
     private string appId = "gJUwJuTuP-t1wsM1DolK_A";
-    private string videoAdUnitId = "nn3gMUJH1PkMnqQJcAxStg";
+    private string adUnitId = "nn3gMUJH1PkMnqQJcAxStg";
 #else
     private string appId = "unexpected_platform";
-    private string videoAdUnitId = "unexpected_adunit_id";
+    private string adUnitId = "unexpected_platform";
 #endif
 
     void Start()
@@ -34,7 +34,7 @@ public class RewardedVideoScene : MonoBehaviour {
     {
         Debug.Log("Rewarded Video: Creating Ad");
         // Create an rewarded based video ad
-        videoAd = new RewardBasedVideoAd(videoAdUnitId);
+        videoAd = new RewardBasedVideoAd(adUnitId);
 
         // Called when an ad request has successfully loaded.
         videoAd.OnAdLoaded += HandleVideoAdLoaded;

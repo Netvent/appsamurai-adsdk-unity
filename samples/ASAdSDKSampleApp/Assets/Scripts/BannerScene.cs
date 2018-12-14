@@ -9,13 +9,13 @@ public class BannerScene : MonoBehaviour {
 
 #if UNITY_ANDROID
     private string appId = "gJIwJ-T0Kst86Mw3JIk-1A";
-    private string bannerAdUnitId = "nnrgOQ4JmLRCuphTYTkRvg";
+    private string adUnitId = "nnrgOQ4JmLRCuphTYTkRvg";
 #elif (UNITY_5 && UNITY_IOS) || UNITY_IPHONE
     private string appId = "gJUwJuTuP-t1wsM1DolK_A";
-    private string bannerAdUnitId = "nn3gP0JF1PkMm593dmIB5Q";
+    private string adUnitId = "nn3gP0JF1PkMm593dmIB5Q";
 #else
     private string appId = "unexpected_platform";
-    private string bannerAdUnitId = "unexpected_adunit_id";
+    private string adUnitId = "unexpected_platform";
 #endif
 
     void Start () {
@@ -49,7 +49,7 @@ public class BannerScene : MonoBehaviour {
         }
 
         // Create an banner view
-        bannerView = new BannerView(bannerAdUnitId, AdSize.Banner, AdPosition.BottomCenter);
+        bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.BottomCenter);
 
         // Called when an ad request has successfully loaded.
         bannerView.OnAdLoaded += HandleAdLoaded;
@@ -67,8 +67,6 @@ public class BannerScene : MonoBehaviour {
     {
         return new AdRequest.Builder()
             .AddTestDevice("YXBwc20tNzliNDU5YzVlZWM3NzA4Zg==")
-            //.AddAdFormat(AdFormat.HTML)
-            //.AddAdFormat(AdFormat.VIDEO)
             .Build();
     }
 
