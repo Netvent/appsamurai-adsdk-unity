@@ -48,6 +48,23 @@ public class AppSamuraiAdsDemoScript : MonoBehaviour
 }
 ```
 
+### SDK Logs
+You can easily disable and enable SDK logs.
+
+```csharp
+// enable SDK logs
+MobileAds.setLogEnabled(true);
+
+// disable SDK logs
+MobileAds.setLogEnabled(false);
+```
+
+### SDK Version
+If you want to check the SDK version you can use getSDKVersion method.
+```csharp
+MobileAds.getSDKVersion();
+```
+
 ## Adding test devices
 If you want to test your SDK integration without using live app id and ad unit ids, you can add your device as test device.
 
