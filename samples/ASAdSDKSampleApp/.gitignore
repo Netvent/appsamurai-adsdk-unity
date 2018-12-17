@@ -4,6 +4,10 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Assets/AppSamuraiAds
+Assets/AppSamuraiAds.meta
+Assets/Plugins
+Assets/Plugins.meta
 
 # Visual Studio cache directory
 .vs/
