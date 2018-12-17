@@ -28,21 +28,10 @@ namespace AppSamuraiAds.Android
             mobileAdsClass.CallStatic("initialize", activity, appId);
         }
 
-        public void SetApplicationVolume(float volume)
+        public string getSDKVersion()
         {
             AndroidJavaClass mobileAdsClass = new AndroidJavaClass(Utils.MobileAdsClassName);
-            mobileAdsClass.CallStatic("setAppVolume", volume);
-        }
-
-        public void SetApplicationMuted(bool muted)
-        {
-            AndroidJavaClass mobileAdsClass = new AndroidJavaClass(Utils.MobileAdsClassName);
-            mobileAdsClass.CallStatic("setAppMuted", muted);
-        }
-
-        public void SetiOSAppPauseOnBackground(bool pause)
-        {
-            // Do nothing on Android. Default behavior is to pause when app is backgrounded.
+            return mobileAdsClass.CallStatic<string>("getSDKVersion");
         }
     }
 }

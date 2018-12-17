@@ -20,5 +20,9 @@ namespace AppSamuraiAds.Api
             MethodInfo method = mobileAdsClientFactory.GetMethod("MobileAdsInstance",BindingFlags.Static | BindingFlags.Public);
             return (IMobileAdsClient)method.Invoke(null, null);
         }
+        public static String getSDKVersion()
+        {
+            return client.getSDKVersion();
+        }
     }
 }

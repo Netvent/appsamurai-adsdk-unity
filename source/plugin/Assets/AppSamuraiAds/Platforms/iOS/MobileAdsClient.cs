@@ -24,18 +24,6 @@ namespace AppSamuraiAds.iOS
         {
             Externs.ASUInitialize(appId);
         }
-
-        public void SetApplicationVolume(float volume)
-        {
-        }
-
-        public void SetApplicationMuted(bool muted)
-        {
-        }
-
-        public void SetiOSAppPauseOnBackground(bool pause)
-        {
-        }
     }
 }
 
