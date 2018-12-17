@@ -33,6 +33,12 @@ namespace AppSamuraiAds.Android
             AndroidJavaClass mobileAdsClass = new AndroidJavaClass(Utils.MobileAdsClassName);
             return mobileAdsClass.CallStatic<string>("getSDKVersion");
         }
+
+        public void setLogEnabled(bool logEnabled)
+        {
+            AndroidJavaClass mobileAdsClass = new AndroidJavaClass(Utils.MobileAdsClassName);
+            mobileAdsClass.CallStatic("setLogEnabled", logEnabled);
+        }
     }
 }
 
