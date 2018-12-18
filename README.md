@@ -25,6 +25,36 @@ Make sure all of the releated files imported.
 
 [![alt text](https://i.ibb.co/cT8zSrn/assets.png "AppSamurai")](https://www.appsamurai.com)
 
+### Download Platform Specific Libraries With Play Service Resolver
+App Samurai Ads Unity Plugin uses Play Service Resolver for downloading platform ( Android, iOS ) libraries. 
+#### Step 1
+Download the latest version of Play Service Resolver with name play-services-resolver-x.y.z.w.unitypackage from **[here](https://github.com/googlesamples/unity-jar-resolver/releases)**
+#### Step 2
+Export Play Service Resolver package
+[![alt text](https://i.ibb.co/ZByXvp4/Screen-Shot-2018-12-18-at-19-58-10.png "AppSamurai")](https://www.appsamurai.com)
+
+#### Step 3
+Run Play Service Resolver for Android and iOS seperately if it doesn't start automatically.
+[![alt text](https://i.ibb.co/WfQK6NL/unity-ios-resolver.png "AppSamurai")](https://www.appsamurai.com)
+
+[![alt text](https://i.ibb.co/yBjXQf9/unity-android-resolver.png "AppSamurai")](https://www.appsamurai.com)
+
+#### Step 4
+Check if libraries downloaded successfuly. Check /Assets/Plugins/Android directory for Android libraries ( aar and jar files ) and check for /Assets/Plugins/IOS/Frameworks for iOS frameworks.
+
+#### Android Libraries
+Play service resolver will help you all of the dependent libararies easily. Here is the basic dependency map for Android.
+com.appsamurai.adsdk:unity
+--- com.appsamurai.adsdk:core
+------- com.android.support:appcompat-v7
+---------- v4 and v7 support libraries
+------- com.squareup.retrofit2:retrofit
+------- com.squareup.retrofit2:converter-gson
+        
+#### iOS Libraries
+will be added soon...
+
+
 ## Initialization
 ### SDK Initialization
 ```csharp

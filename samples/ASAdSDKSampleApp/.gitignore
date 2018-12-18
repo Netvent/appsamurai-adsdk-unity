@@ -8,6 +8,9 @@ Assets/AppSamuraiAds
 Assets/AppSamuraiAds.meta
 Assets/Plugins
 Assets/Plugins.meta
+Assets/PlayServicesResolver
+Assets/PlayServicesResolver.meta
+
 
 # Visual Studio cache directory
 .vs/
