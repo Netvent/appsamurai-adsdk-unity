@@ -1,60 +1,43 @@
 # App Samurai Ads Unity Plugin
-
 [![alt text](https://appsamurai.com/wp-content/uploads/2018/10/as_dark_logotype-8.png "AppSamurai")](https://www.appsamurai.com)
-
 # Easy And Effective App Monetization
-
 The App Samurai Ads Unity plugin enables Unity developers to easily serve App Samurai Ads on Android and iOS apps without having to write Java or Objective-C (and/or Swift) code. The plugin provides a C# interface for requesting ads that is used by C# scripts in your Unity project. 
-
 ## Sample Projects
 Check **samples** directory for sample projects. 
-
 ## Download
 Please check out our **[releases](//github.com/Netvent/appsamurai-adsdk-unity/releases)** for the latest official version of the plugin.
-
 ### Import the Mobile Ads Unity plugin
 Open your project in the Unity editor. Select **Assets > Import Package > Custom Package** and find the AppSamuraiAdsPlugin.unitypackage file you downloaded.
-
-[![alt text](https://i.ibb.co/dJCbQDP/importing-package-1.png "AppSamurai")](https://www.appsamurai.com)
-
+![Import Custom Package](docs/screenshots/import-custom-package.png?raw=true "Import Custom Package")
 Make sure all of the files are selected and click **Import**.
-
-[![alt text](https://i.ibb.co/SrpLHT6/importing-package-2.png "AppSamurai")](https://www.appsamurai.com)
-
-Make sure all of the releated files imported.
-
-[![alt text](https://i.ibb.co/cT8zSrn/assets.png "AppSamurai")](https://www.appsamurai.com)
-
+![Select all Files](docs/screenshots/select-all-packages.png?raw=true "Select all Files")
+Make sure all of the related files imported.
+![Check Files](docs/screenshots/import-validation-screen.png?raw=true "Check Files")
 ### Download Platform Specific Libraries With Play Service Resolver
 App Samurai Ads Unity Plugin uses Play Service Resolver for downloading platform ( Android, iOS ) libraries. 
 #### Step 1
 Download the latest version of Play Service Resolver with name play-services-resolver-x.y.z.w.unitypackage from **[here](https://github.com/googlesamples/unity-jar-resolver/releases)**
 #### Step 2
 Export Play Service Resolver package
-[![alt text](https://i.ibb.co/ZByXvp4/Screen-Shot-2018-12-18-at-19-58-10.png "AppSamurai")](https://www.appsamurai.com)
-
+![Import Play Services Resolver](docs/screenshots/import-playservicesresolver.png?raw=true "Import Play Services Resolver")
 #### Step 3
-Run Play Service Resolver for Android and iOS seperately if it doesn't start automatically.
-[![alt text](https://i.ibb.co/WfQK6NL/unity-ios-resolver.png "AppSamurai")](https://www.appsamurai.com)
-
-[![alt text](https://i.ibb.co/yBjXQf9/unity-android-resolver.png "AppSamurai")](https://www.appsamurai.com)
-
+Run Play Service Resolver for Android and iOS separately if it doesn't start automatically.
+![Run Android Resolver](docs/screenshots/android-resolver.png?raw=true "Run Android Resolver")
+![Run iOS Resolver](docs/screenshots/android-resolver.png?raw=true "Run iOS Resolver")
 #### Step 4
-Check if libraries downloaded successfuly. Check /Assets/Plugins/Android directory for Android libraries ( aar and jar files ) and check for /Assets/Plugins/IOS/Frameworks for iOS frameworks.
-
+Check if libraries downloaded successfully. Check /Assets/Plugins/Android directory for Android libraries ( aar and jar files ) and check for /Assets/Plugins/IOS/Frameworks for iOS frameworks.
 #### Android Libraries
-Play service resolver will help you all of the dependent libararies easily. Here is the basic dependency map for Android.
+Play Service Resolver will help you all of the dependent libraries easily. Here is the basic dependency map for Android.
 com.appsamurai.adsdk:unity
 --- com.appsamurai.adsdk:core
 ------- com.android.support:appcompat-v7
 ---------- v4 and v7 support libraries
 ------- com.squareup.retrofit2:retrofit
 ------- com.squareup.retrofit2:converter-gson
-        
 #### iOS Libraries
-will be added soon...
-
-
+Play Service Resolver will help you to install all dependent libraries via CocoaPods easily. Please make sure you handle configurations for correct usage.
+![Always Embed Swift Standard Libraries](docs/screenshots/always-embed-swift-standard-libraries?raw=true "Always Embed Swift Standard Libraries")
+![Embed Modules](docs/screenshots/embed-modules.png?raw=true "Embed Modules")
 ## Initialization
 ### SDK Initialization
 ```csharp
@@ -68,7 +51,7 @@ public class AppSamuraiAdsDemoScript : MonoBehaviour
         #if UNITY_ANDROID
             private string appId = "gJIwJ-T0Kst86Mw3JIk-1A";
         #elif (UNITY_5 && UNITY_IOS) || UNITY_IPHONE
-            private string appId = "gJUwJuTuP-t1wsM1DolK_A";
+            private string appId = "appsamurai-sample-ios-app-id";
         #else
             private string appId = "unexpected_platform";
         #endif
@@ -77,32 +60,25 @@ public class AppSamuraiAdsDemoScript : MonoBehaviour
     }
 }
 ```
-
 ### SDK Logs
 You can easily disable and enable SDK logs.
-
 ```csharp
 // enable SDK logs
 MobileAds.setLogEnabled(true);
-
 // disable SDK logs
 MobileAds.setLogEnabled(false);
 ```
-
 ### SDK Version
 If you want to check the SDK version you can use getSDKVersion method.
 ```csharp
 MobileAds.getSDKVersion();
 ```
-
 ## Adding test devices
 If you want to test your SDK integration without using live app id and ad unit ids, you can add your device as test device.
-
 To see your device ID check the logcat output for a message that looks like this
 ```
 D/AppSamurai: Use AdRequest.Builder.addTestDevice("YXBwc20tEzGiNDU5YzVlZWM3NzA4Zg==") to get test ads on this device.
 ```
-
 Modify your code to call AdRequest.Builder.addTestDevice() with your test device ID. This method can be called multiple times for multiple devices.
 ```csharp
 private AdRequest CreateAdRequest()
@@ -112,14 +88,11 @@ private AdRequest CreateAdRequest()
         .Build();
 }
 ```
-
-If you properly set your device as test device, at logcat you will seee a message that looks like this
+If you properly set your device as test device, at logcat you will see a message that looks like this
 ```
 D/AppSamurai: This request will be sent from a test device.
 ```
-
 ***Note*** : Android emulators are automatically configured as test devices.
-
 ## Banner Integration
 ### Create a BannerView
 ```csharp
@@ -133,7 +106,7 @@ public class AppSamuraiAdsDemoScript : MonoBehaviour
 #if UNITY_ANDROID
     private string adUnitId = "nnrgOQ4JmLRCuphTYTkRvg";
 #elif (UNITY_5 && UNITY_IOS) || UNITY_IPHONE
-    private string adUnitId = "nn3gP0JF1PkMm593dmIB5Q";
+    private string adUnitId = "appsamurai-sample-ios-banner-ad-id";
 #else
     private string adUnitId = "unexpected_platform";
 #endif
@@ -178,10 +151,8 @@ public void CreateAd () {
     bannerView.OnAdLeavingApplication += HandleAdLeavingApplication;
 }
 ```
-
 #### Supported Banner Sizes
 So far the only supported banner size is 320 x 50. 
-
 ### Interstitial Integration
 #### Create an interstitial ad
 ```csharp
@@ -195,7 +166,7 @@ public class AppSamuraiAdsDemoScript : MonoBehaviour
 #if UNITY_ANDROID
     private string adUnitId = "nnrgOQ8JmbRCupYRQyNQwg";
 #elif (UNITY_5 && UNITY_IOS) || UNITY_IPHONE
-    private string adUnitId = "nn3gMEJE1PkMnJQKXxkL7Q";
+    private string adUnitId = "appsamurai-sample-ios-interstitial-ad-id";
 #else
     private string adUnitId = "unexpected_platform";
 #endif
@@ -256,7 +227,7 @@ public void CreateAd () {
 ```
 
 #### Supported Media Formats
-Interstial ad type supports both HTML and video ad formats. But AdListener methods are identical for both HTML and video. If you just want to show some of the ad formats you can specify while creating AdRequest.
+Interstitial ad type supports both HTML and video ad formats. But AdListener methods are identical for both HTML and video. If you just want to show some of the ad formats you can specify while creating AdRequest.
 ```csharp
 private AdRequest CreateAdRequest()
 {
@@ -267,7 +238,6 @@ private AdRequest CreateAdRequest()
         .Build();
 }
 ```
-
 ### Rewarded Video Integration
 #### Create an rewarded video ad
 ```csharp
@@ -281,7 +251,7 @@ public class AppSamuraiAdsDemoScript : MonoBehaviour
 #if UNITY_ANDROID
     private string adUnitId = "nnrgOQwJmrRCuppxWA0Q_A";
 #elif (UNITY_5 && UNITY_IOS) || UNITY_IPHONE
-    private string adUnitId = "nn3gMUJH1PkMnqQJcAxStg";
+    private string adUnitId = "appsamurai-sample-ios-rewardbasedvideo-ad-id";
 #else
     private string adUnitId = "unexpected_platform";
 #endif
@@ -343,6 +313,4 @@ public void CreateAd()
     videoAd.OnAdClosed += HandleVideoAdClosed;
 }
 ```
-
-
 [![alt text](https://appsamurai.com/wp-content/uploads/2014/12/web_home_cta_2.png "AppSamurai")](https://www.appsamurai.com)
