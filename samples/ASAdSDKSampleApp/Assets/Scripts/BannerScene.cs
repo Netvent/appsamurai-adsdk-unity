@@ -11,8 +11,8 @@ public class BannerScene : MonoBehaviour {
     private string appId = "gJIwJ-T0Kst86Mw3JIk-1A";
     private string adUnitId = "nnrgOQ4JmLRCuphTYTkRvg";
 #elif (UNITY_5 && UNITY_IOS) || UNITY_IPHONE
-    private string appId = "gJUwJuTuP-t1wsM1DolK_A";
-    private string adUnitId = "nn3gP0JF1PkMm593dmIB5Q";
+    private string appId = "appsamurai-sample-ios-app-id";
+    private string adUnitId = "appsamurai-sample-ios-banner-ad-id";
 #else
     private string appId = "unexpected_platform";
     private string adUnitId = "unexpected_platform";
@@ -63,13 +63,6 @@ public class BannerScene : MonoBehaviour {
         bannerView.OnAdLeavingApplication += HandleAdLeavingApplication;
     }
 
-    private AdRequest CreateAdRequest()
-    {
-        return new AdRequest.Builder()
-            .AddTestDevice("YXBwc20tNzliNDU5YzVlZWM3NzA4Zg==")
-            .Build();
-    }
-
     public void LoadAd()
     {
         if (bannerView != null)
@@ -77,7 +70,7 @@ public class BannerScene : MonoBehaviour {
             Debug.Log("Banner: Loading Ad");
             // Send an ad request
             // Banner will be shown automatically when the ad is loaded
-            bannerView.LoadAd(CreateAdRequest());
+            bannerView.LoadAd();
         }
         else
         {

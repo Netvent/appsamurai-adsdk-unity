@@ -1,7 +1,7 @@
-/// Base type representing a ASU* pointer.
+/// Base type representing an ASU* pointer.
 typedef const void *ASUReference;
 
-/// Type representing a ASUBannerView.
+/// Type representing an ASUBannerView.
 typedef const void *ASUBannerViewReference;
 
 /// Type representing a Unity banner client.
@@ -13,7 +13,7 @@ typedef void (*ASUAdViewDidFailToReceiveAdWithErrorCallback)(ASUBannerClientRefe
 
 typedef void (*ASUAdViewWillLeaveApplicationCallback)(ASUBannerClientReference *bannerClient);
 
-/// Type representing a ASUInterstitial.
+/// Type representing an ASUInterstitial.
 typedef const void *ASUInterstitialReference;
 
 /// Type representing a Unity interstitial client.
@@ -29,7 +29,7 @@ typedef void (*ASUInterstitialDidDismissScreenCallback)(ASUInterstitialReference
 
 typedef void (*ASUInterstitialWillLeaveApplicationCallback)(ASUInterstitialReference *interstitialClient);
 
-/// Type representing a ASURewardBasedVideoAd.
+/// Type representing an ASURewardBasedVideoAd.
 typedef const void *ASURewardBasedVideoAdReference;
 
 /// Type representing a Unity rewarded video ad client.
@@ -50,3 +50,6 @@ typedef void (*ASURewardBasedVideoAdDidCompleteCallback)(ASURewardBasedVideoAdCl
 typedef void (*ASURewardBasedVideoAdDidRewardCallback)(ASURewardBasedVideoAdClientReference *rewardBasedVideoAdClient);
 
 typedef void (*ASURewardBasedVideoAdWillLeaveApplicationCallback)(ASURewardBasedVideoAdClientReference *rewardBasedVideoAdClient);
+
+/// Type representing an ASURewardBasedVideoAd.
+typedef const void *ASUAdRequestReference;

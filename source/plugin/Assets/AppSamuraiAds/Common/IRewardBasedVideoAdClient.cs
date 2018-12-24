@@ -26,10 +26,7 @@ namespace AppSamuraiAds.Common
         void CreateRewardBasedVideoAd(string adUnitId);
 
         // Requests a new ad for the reward based video ad.
-        void LoadAd(AdRequest request, string adUnitId);
-
-        // Requests a new ad for the reward based video ad.
-        void LoadAd(string adUnitId);
+        void LoadAd(AdRequest request);
 
         // Requests a new ad for the reward based video ad.
         void LoadAd();

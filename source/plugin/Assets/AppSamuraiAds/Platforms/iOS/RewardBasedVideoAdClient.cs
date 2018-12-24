@@ -47,10 +47,10 @@ namespace AppSamuraiAds.iOS
             }
         }
 
-        public void CreateRewardBasedVideoAd()
+        public void CreateRewardBasedVideoAd(string adUnitId)
         {
             this.rewardBasedVideoAdClientPtr = (IntPtr)GCHandle.Alloc(this);
-            this.RewardBasedVideoAdPtr = Externs.ASUCreateRewardBasedVideoAd(this.rewardBasedVideoAdClientPtr);
+            this.RewardBasedVideoAdPtr = Externs.ASUCreateRewardBasedVideoAd(this.rewardBasedVideoAdClientPtr, adUnitId);
 
             Externs.ASUSetRewardBasedVideoAdCallbacks(
                 this.RewardBasedVideoAdPtr,
@@ -69,18 +69,18 @@ namespace AppSamuraiAds.iOS
             return Externs.ASURewardBasedVideoAdReady(this.RewardBasedVideoAdPtr);
         }
 
-        public void LoadAd(AdRequest request, string adUnitId)
+        public void LoadAd(AdRequest request)
         {
-            Externs.ASURequestRewardBasedVideoAd(this.RewardBasedVideoAdPtr, adUnitId);
+            IntPtr requestPtr = Utils.BuildAdRequest(request);
+            Externs.ASULoadRewardBasedVideoAd(this.RewardBasedVideoAdPtr, requestPtr);
+            Externs.ASURelease(requestPtr);
         }
 
-        public void LoadAd(string adUnitId)
+        public void LoadAd()
         {
-            Externs.ASURequestRewardBasedVideoAd(this.RewardBasedVideoAdPtr, adUnitId);
-        }
-
-        public void SetUserId(string userId)
-        {
+            IntPtr requestPtr = Utils.BuildAdRequest();
+            Externs.ASULoadRewardBasedVideoAd(this.RewardBasedVideoAdPtr, requestPtr);
+            Externs.ASURelease(requestPtr);
         }
 
         public void ShowRewardBasedVideoAd()

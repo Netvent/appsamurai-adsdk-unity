@@ -10,7 +10,7 @@ namespace AppSamuraiAds.Android
     {
         #region Fully-qualified class names
 
-        #region AppSamura Mobile Ads SDK class names
+        #region AppSamurai Mobile Ads SDK class names
 
         public const string AdListenerClassName = "com.appsamurai.ads.common.AdListener";
 

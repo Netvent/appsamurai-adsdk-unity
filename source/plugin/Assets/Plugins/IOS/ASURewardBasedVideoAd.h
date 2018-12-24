@@ -1,27 +1,21 @@
-//
-//  ASURewardBasedVideoAd.h
-//  AppSamuraiAdSDKUnityBridge
-//
-//  Created by Levent ORAL on 25.09.2018.
-//  Copyright © 2018 Levent ORAL. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
-// TODO: check AppSamuraiAdSDK/AppSamuraiAdSDK.h usage
-#import "AppSamuraiAdSDK/AppSamuraiAdSDK-Swift.h"
+@import AppSamuraiAdSDK;
 
 #import "ASUReferences.h"
 
-@interface ASURewardBasedVideoAd : NSObject <ASRewardBasedVideoAdDelegate>
+@interface ASURewardBasedVideoAd : NSObject<ASRewardBasedVideoAdDelegate>
 
-- (id)initWithReference:(ASURewardBasedVideoAdClientReference *)rewardBasedVideoAdClient;
+- (id)initWithReference:(ASURewardBasedVideoAdClientReference *)rewardBasedVideoAdClient
+               adUnitID:(NSString *)adUnitID;
 
-- (void)loadAdWithAdUnitId:(NSString *)adUnitID;
+- (void)loadAdWithAdRequest:(ASAdRequest *)adRequest;
 
 - (void)showRewardBasedVideoAd;
 
 - (BOOL)isReady;
+
+@property(nonatomic, strong) ASRewardBasedVideoAd *asRewardBasedVideoAd;
 
 @property(nonatomic, assign) ASURewardBasedVideoAdClientReference *rewardBasedVideoAdClient;
 

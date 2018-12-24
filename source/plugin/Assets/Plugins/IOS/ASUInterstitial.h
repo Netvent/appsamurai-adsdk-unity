@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 
-// TODO: check AppSamuraiAdSDK/AppSamuraiAdSDK.h usage
-#import "AppSamuraiAdSDK/AppSamuraiAdSDK-Swift.h"
+@import AppSamuraiAdSDK;
 
 #import "ASUReferences.h"
 
@@ -10,7 +9,7 @@
 - (id)initWithReference:(ASUInterstitialClientReference *)interstitialClient
                adUnitID:(NSString *)adUnitID;
 
-- (void)loadAd;
+- (void)loadAdWithAdRequest:(ASAdRequest *)adRequest;
 
 - (void)showInterstitial;
 

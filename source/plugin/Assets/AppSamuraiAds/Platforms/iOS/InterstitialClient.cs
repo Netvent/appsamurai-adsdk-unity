@@ -77,12 +77,16 @@ namespace AppSamuraiAds.iOS
 
         public void LoadAd(AdRequest request)
         {
-            Externs.ASURequestInterstitial(this.InterstitialPtr);
+            IntPtr requestPtr = AdRequestUtil.BuildAdRequest(request);
+            Externs.ASULoadInterstitial(this.InterstitialPtr, requestPtr);
+            Externs.ASURelease(requestPtr);
         }
 
         public void LoadAd()
         {
-            Externs.ASURequestInterstitial(this.InterstitialPtr);
+            IntPtr requestPtr = AdRequestUtil.BuildAdRequest();
+            Externs.ASULoadInterstitial(this.InterstitialPtr, requestPtr);
+            Externs.ASURelease(requestPtr);
         }
 
         public void Dispose()

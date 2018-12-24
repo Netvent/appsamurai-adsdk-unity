@@ -11,8 +11,8 @@ public class RewardedVideoScene : MonoBehaviour {
     private string appId = "gJIwJ-T0Kst86Mw3JIk-1A";
     private string adUnitId = "nnrgOQwJmrRCuppxWA0Q_A";
 #elif (UNITY_5 && UNITY_IOS) || UNITY_IPHONE
-    private string appId = "gJUwJuTuP-t1wsM1DolK_A";
-    private string adUnitId = "nn3gMUJH1PkMnqQJcAxStg";
+    private string appId = "appsamurai-sample-ios-app-id";
+    private string adUnitId = "appsamurai-sample-ios-rewardbasedvideo-ad-id";
 #else
     private string appId = "unexpected_platform";
     private string adUnitId = "unexpected_platform";

@@ -17,9 +17,9 @@
     return self;
 }
 
--(void)loadAd {
+-(void)loadAdWithAdRequest:(ASAdRequest *)adRequest {
     NSLog(@"%s", __FUNCTION__);
-    [self.asBannerView loadAdWithAdRequest:[[ASAdRequest alloc] init]];
+    [self.asBannerView loadAdWithAdRequest:adRequest];
 }
 
 -(void)hideBannerView {
@@ -49,7 +49,7 @@
 -(void)addBannerView {
     UIView *unityView = [ASUPluginUtil unityGLViewController].view;
     [unityView addSubview:self.asBannerView];
-
+    
     [self.asBannerView.centerXAnchor constraintEqualToAnchor:unityView.centerXAnchor].active = YES;
     [self.asBannerView.bottomAnchor constraintEqualToAnchor:unityView.bottomAnchor constant:0].active = YES;
 }
@@ -57,9 +57,9 @@
 - (void)adViewDidReceiveAd:(ASBannerView * _Nonnull)asBannerView {
     NSLog(@"%s %s", __FUNCTION__, (self.adReceivedCallback ? "" : "Callback function has not set"));
     [self removeBannerView];
-
+    
     self.asBannerView = asBannerView;
-
+    
     [self addBannerView];
     if (self.adReceivedCallback) {
         self.adReceivedCallback(self.bannerClient);

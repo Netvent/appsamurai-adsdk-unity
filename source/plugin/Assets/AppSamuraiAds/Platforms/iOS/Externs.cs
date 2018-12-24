@@ -10,9 +10,16 @@ namespace AppSamuraiAds.iOS
     {
 #region Common externs
         [DllImport("__Internal")]
+        internal static extern void ASURelease(IntPtr obj);
+#endregion
+
+#region MobileAds externs
+        [DllImport("__Internal")]
         internal static extern void ASUInitialize(string key);
         [DllImport("__Internal")]
-        internal static extern void ASURelease(IntPtr obj);
+        internal static extern string ASUGetSDKVersion();
+        [DllImport("__Internal")]
+        internal static extern void ASUSetLogEnabled(bool logEnabled);
 #endregion
 
 #region BannerView externs
@@ -25,7 +32,7 @@ namespace AppSamuraiAds.iOS
             BannerClient.ASUAdViewDidFailToReceiveAdWithErrorCallback adFailedCallback,
             BannerClient.ASUAdViewWillLeaveApplicationCallback willLeaveCallback);
         [DllImport("__Internal")]
-        internal static extern void ASURequestBannerAd(IntPtr bannerView);
+        internal static extern void ASULoadBannerAd(IntPtr bannerView, IntPtr adRequest);
         [DllImport("__Internal")]
         internal static extern void ASUHideBannerView(IntPtr bannerView);
         [DllImport("__Internal")]
@@ -46,7 +53,7 @@ namespace AppSamuraiAds.iOS
             InterstitialClient.ASUInterstitialDidDismissScreenCallback didDismissCallback,
             InterstitialClient.ASUInterstitialWillLeaveApplicationCallback willLeaveCallback);
         [DllImport("__Internal")]
-        internal static extern void ASURequestInterstitial(IntPtr interstitial);
+        internal static extern void ASULoadInterstitial(IntPtr interstitial, IntPtr adRequest);
         [DllImport("__Internal")]
         internal static extern void ASUShowInterstitial(IntPtr interstitial);
         [DllImport("__Internal")]
@@ -55,7 +62,7 @@ namespace AppSamuraiAds.iOS
 
 #region RewardBasedVideoAd externs
         [DllImport("__Internal")]
-        internal static extern IntPtr ASUCreateRewardBasedVideoAd(IntPtr rewardBasedVideoAd);
+        internal static extern IntPtr ASUCreateRewardBasedVideoAd(IntPtr rewardBasedVideoAd, string adUnitID);
         [DllImport("__Internal")]
         internal static extern IntPtr ASUSetRewardBasedVideoAdCallbacks(
             IntPtr rewardBasedVideoAd,
@@ -68,11 +75,20 @@ namespace AppSamuraiAds.iOS
             RewardBasedVideoAdClient.ASURewardBasedVideoAdDidRewardReceivedCallback didRewardCallback,
             RewardBasedVideoAdClient.ASURewardBasedVideoAdWillLeaveApplicationCallback willLeaveCallback);
         [DllImport("__Internal")]
-        internal static extern void ASURequestRewardBasedVideoAd(IntPtr rewardBasedVideoAd, string adUnitID);
+        internal static extern void ASULoadRewardBasedVideoAd(IntPtr rewardBasedVideoAd, IntPtr adRequest);
         [DllImport("__Internal")]
         internal static extern void ASUShowRewardBasedVideoAd(IntPtr rewardBasedVideoAd);
         [DllImport("__Internal")]
         internal static extern bool ASURewardBasedVideoAdReady(IntPtr rewardBasedVideoAd);
+#endregion
+
+#region AdRequest externs
+        [DllImport("__Internal")]
+        internal static extern IntPtr ASUCreateAdRequest();
+        [DllImport("__Internal")]
+        internal static extern IntPtr ASUAddTestDevice(IntPtr adRequest, string testDevice);
+        [DllImport("__Internal")]
+        internal static extern IntPtr ASUAddSupportedFormat(IntPtr adRequest, string supportedFormat);
 #endregion
     }
 }

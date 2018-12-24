@@ -24,6 +24,16 @@ namespace AppSamuraiAds.iOS
         {
             Externs.ASUInitialize(appId);
         }
+
+        public string getSDKVersion()
+        {
+            return Externs.ASUGetSDKVersion();
+        }
+
+        public void setLogEnabled(bool logEnabled)
+        {
+            Externs.ASUSetLogEnabled(logEnabled);
+        }
     }
 }
 

@@ -7,15 +7,6 @@ namespace AppSamuraiAds.Api
     public class RewardBasedVideoAd
     {
         private IRewardBasedVideoAdClient client;
-        //private static readonly RewardBasedVideoAd instance = new RewardBasedVideoAd();
-
-        //public static RewardBasedVideoAd Instance
-        //{
-        //    get
-        //    {
-        //        return instance;
-        //    }
-        //}
 
         // Creates a Singleton RewardBasedVideoAd.
         public RewardBasedVideoAd(string adUnitId)
@@ -108,15 +99,9 @@ namespace AppSamuraiAds.Api
         public event EventHandler<EventArgs> OnAdCompleted;
 
         // Loads a new reward based video ad request
-        public void LoadAd(AdRequest request, string adUnitId)
+        public void LoadAd(AdRequest request)
         {
-            client.LoadAd(request, adUnitId);
-        }
-
-        // Loads a new reward based video ad request
-        public void LoadAd(string adUnitId)
-        {
-            client.LoadAd(adUnitId);
+            client.LoadAd(request);
         }
 
         // Loads a new reward based video ad request

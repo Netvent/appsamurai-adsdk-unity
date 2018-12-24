@@ -17,10 +17,10 @@
     return self;
 }
 
-- (void)loadAd
+- (void)loadAdWithAdRequest:(ASAdRequest *)adRequest
 {
     NSLog(@"%s", __FUNCTION__);
-    [self.asInterstitial loadAdWithAdRequest:[[ASAdRequest alloc] init]];
+    [self.asInterstitial loadAdWithAdRequest:adRequest];
 }
 
 - (void)showInterstitial

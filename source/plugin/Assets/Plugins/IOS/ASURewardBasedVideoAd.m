@@ -1,41 +1,33 @@
-//
-//  ASURewardBasedVideoAd.m
-//  AppSamuraiAdSDKUnityBridge
-//
-//  Created by Levent ORAL on 25.09.2018.
-//  Copyright © 2018 Levent ORAL. All rights reserved.
-//
-
 #import "ASURewardBasedVideoAd.h"
 #import "ASUPluginUtil.h"
 
 @implementation ASURewardBasedVideoAd
 
-- (id)initWithReference:(ASURewardBasedVideoAdClientReference *)rewardBasedVideoAdClient {
+- (id)initWithReference:(ASURewardBasedVideoAdClientReference *)rewardBasedVideoAdClient
+               adUnitID:(NSString *)adUnitID {
     self = [super init];
-    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"%s %s %@", __FUNCTION__, "AdUnitID is", adUnitID);
     if (self) {
-        [[ASRewardBasedVideoAd instance] setDelegate:self];
+        _asRewardBasedVideoAd = [[ASRewardBasedVideoAd alloc] initWithAdUnitID:adUnitID];
+        _asRewardBasedVideoAd.delegate = self;
         _rewardBasedVideoAdClient = rewardBasedVideoAdClient;
     }
     return self;
 }
 
-- (void)loadAdWithAdUnitId:(NSString *)adUnitID {
-    NSLog(@"%s %s %@", __FUNCTION__, "AdUnitID is", adUnitID);
-    [[ASRewardBasedVideoAd instance] loadAdWithAdUnitID:adUnitID adRequest:[[ASAdRequest alloc] init]];
+- (void)loadAdWithAdRequest:(ASAdRequest *)adRequest {
+    NSLog(@"%s", __FUNCTION__);
+    [_asRewardBasedVideoAd loadAdWithAdRequest:adRequest];
 }
 
 - (void)showRewardBasedVideoAd {
-    ASRewardBasedVideoAd *rewardBasedVideoAd = [ASRewardBasedVideoAd instance];
-    if (rewardBasedVideoAd.isReady) {
-        [rewardBasedVideoAd presentWithRootViewController:[ASUPluginUtil unityGLViewController]];
+    if (_asRewardBasedVideoAd != nil && _asRewardBasedVideoAd.isReady) {
+        [_asRewardBasedVideoAd presentWithRootViewController:[ASUPluginUtil unityGLViewController]];
     }
 }
 
 - (BOOL)isReady {
-    ASRewardBasedVideoAd *rewardBasedVideoAd = [ASRewardBasedVideoAd instance];
-    return [rewardBasedVideoAd isReady];
+    return _asRewardBasedVideoAd != nil && _asRewardBasedVideoAd.isReady;
 }
 
 #pragma ASRewardBasedVideoAdDelegate functions

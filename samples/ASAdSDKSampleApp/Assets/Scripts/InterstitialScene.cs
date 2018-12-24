@@ -11,8 +11,8 @@ public class InterstitialScene : MonoBehaviour {
     private string appId = "gJIwJ-T0Kst86Mw3JIk-1A";
     private string adUnitId = "nnrgOQ8JmbRCupYRQyNQwg";
 #elif (UNITY_5 && UNITY_IOS) || UNITY_IPHONE
-    private string appId = "gJUwJuTuP-t1wsM1DolK_A";
-    private string adUnitId = "nn3gMEJE1PkMnJQKXxkL7Q";
+    private string appId = "appsamurai-sample-ios-app-id";
+    private string adUnitId = "appsamurai-sample-ios-interstitial-ad-id";
 #else
     private string appId = "unexpected_platform";
     private string adUnitId = "unexpected_platform";
@@ -47,23 +47,13 @@ public class InterstitialScene : MonoBehaviour {
         interstitial.OnAdLeavingApplication += HandleInterstitialAdLeavingApplication;
     }
 
-    private AdRequest CreateAdRequest()
-    {
-        return new AdRequest.Builder()
-            .AddTestDevice("YXBwc20tNzliNDU5YzVlZWM3NzA4Zg==")
-            .AddAdFormat(AdFormat.HTML)
-            .AddAdFormat(AdFormat.VIDEO)
-            .AddAdFormat(AdFormat.PLAYABLE)
-            .Build();
-    }
-
     public void LoadAd()
     {
         if (interstitial != null)
         {
             Debug.Log("Interstitial: Loading Ad");
             // Send an ad request
-            interstitial.LoadAd(CreateAdRequest());
+            interstitial.LoadAd();
         }
         else
         {

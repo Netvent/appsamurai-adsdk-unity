@@ -31,14 +31,9 @@ namespace AppSamuraiAds.Android
             androidRewardBasedVideo.Call("create", adUnitId);
         }
 
-        public void LoadAd(AdRequest request, string adUnitId)
+        public void LoadAd(AdRequest request)
         {
-            androidRewardBasedVideo.Call("loadAd", Utils.GetAdRequestJavaObject(request), adUnitId);
-        }
-
-        public void LoadAd(string adUnitId)
-        {
-            androidRewardBasedVideo.Call("loadAd", adUnitId);
+            androidRewardBasedVideo.Call("loadAd", Utils.GetAdRequestJavaObject(request));
         }
 
         public void LoadAd()

@@ -82,12 +82,16 @@ namespace AppSamuraiAds.iOS
         // Loads an ad.
         public void LoadAd(AdRequest request)
         {
-            Externs.ASURequestBannerAd(this.BannerViewPtr);
+            IntPtr requestPtr = AdRequestUtil.BuildAdRequest(request);
+            Externs.ASULoadBannerAd(this.BannerViewPtr, requestPtr);
+            Externs.ASURelease(requestPtr);
         }
 
         public void LoadAd()
         {
-            Externs.ASURequestBannerAd(this.BannerViewPtr);
+            IntPtr requestPtr = AdRequestUtil.BuildAdRequest();
+            Externs.ASULoadBannerAd(this.BannerViewPtr, requestPtr);
+            Externs.ASURelease(requestPtr);
         }
 
         // Displays the banner view on the screen.

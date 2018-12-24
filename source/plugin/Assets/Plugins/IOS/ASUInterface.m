@@ -1,18 +1,33 @@
 #import "ASUBannerView.h"
 #import "ASUInterstitial.h"
 #import "ASURewardBasedVideoAd.h"
+#import "ASUAdRequest.h"
 #import "ASUObjectCache.h"
-
-void ASUInitialize(const char* applicationId) {
-    NSLog(@"%s %s %s", __FUNCTION__, "ApplicationId is", applicationId);
-    [ASMobileAds initializeWithApplicationId: [[NSString alloc] initWithUTF8String:applicationId]];
-}
 
 void ASURelease(ASUReference refence) {
     NSLog(@"%s", __FUNCTION__);
     if (refence) {
         ASUObjectCache *cache = [ASUObjectCache sharedInstance];
         [cache.references removeObjectForKey:[(__bridge NSObject *)refence asu_referenceKey]];
+    }
+}
+
+void ASUInitialize(const char* applicationId) {
+    NSLog(@"%s %s %s", __FUNCTION__, "ApplicationId is", applicationId);
+    [ASMobileAds initialize: [[NSString alloc] initWithUTF8String:applicationId]];
+}
+
+const char* ASUGetSDKVersion(void) {
+    NSLog(@"%s", __FUNCTION__);
+    return [[ASMobileAds getSDKVersion] UTF8String];
+}
+
+void ASUSetLogEnabled(BOOL logEnabled) {
+    NSLog(@"%s %s", __FUNCTION__, (logEnabled ? "True" : "False"));
+    if (logEnabled) {
+        [ASMobileAds setLogLevelWithLogLevel:ASLogLevelDebug];
+    } else {
+        [ASMobileAds setLogLevelWithLogLevel:ASLogLevelOff];
     }
 }
 
@@ -36,10 +51,11 @@ void ASUSetBannerCallbacks(ASUBannerViewReference banner,
     internalBanner.willLeaveCallback = willLeaveCallback;
 }
 
-void ASURequestBannerAd(ASUBannerViewReference banner) {
+void ASULoadBannerAd(ASUBannerViewReference banner, ASUAdRequestReference adRequest) {
     NSLog(@"%s", __FUNCTION__);
     ASUBannerView *internalBanner = (__bridge ASUBannerView *)banner;
-    [internalBanner loadAd];
+    ASUAdRequest *internalAdRequest = (__bridge ASUAdRequest *)adRequest;
+    [internalBanner loadAdWithAdRequest:[internalAdRequest asAdRequest]];
 }
 
 void ASUHideBannerView(ASUBannerViewReference banner) {
@@ -84,10 +100,11 @@ void ASUSetInterstitialCallbacks(ASUInterstitialReference interstitial,
     internalInterstitial.willLeaveCallback = willLeaveCallback;
 }
 
-void ASURequestInterstitial(ASUInterstitialReference interstitial) {
+void ASULoadInterstitial(ASUInterstitialReference interstitial, ASUAdRequestReference adRequest){
     NSLog(@"%s", __FUNCTION__);
     ASUInterstitial *internalInterstitial = (__bridge ASUInterstitial *)interstitial;
-    [internalInterstitial loadAd];
+    ASUAdRequest *internalAdRequest = (__bridge ASUAdRequest *)adRequest;
+    [internalInterstitial loadAdWithAdRequest:[internalAdRequest asAdRequest]];
 }
 
 void ASUShowInterstitial(ASUInterstitialReference interstitial) {
@@ -102,9 +119,11 @@ BOOL ASUInterstitialReady(ASUInterstitialReference interstitial) {
     return [internalInterstitial isReady];
 }
 
-ASURewardBasedVideoAdReference ASUCreateRewardBasedVideoAd(ASURewardBasedVideoAdClientReference *rewardBasedVideoAdClient) {
-    NSLog(@"%s", __FUNCTION__);
-    ASURewardBasedVideoAd *rewardBasedVideoAd = [[ASURewardBasedVideoAd alloc] initWithReference:rewardBasedVideoAdClient];
+ASURewardBasedVideoAdReference ASUCreateRewardBasedVideoAd(ASURewardBasedVideoAdClientReference *rewardBasedVideoAdClient,
+                                                           const char *adUnitID) {
+    NSLog(@"%s %s %s", __FUNCTION__, "AdUnitID is", adUnitID);
+    ASURewardBasedVideoAd *rewardBasedVideoAd = [[ASURewardBasedVideoAd alloc] initWithReference:rewardBasedVideoAdClient
+                                                                                        adUnitID:[[NSString alloc] initWithUTF8String:adUnitID]];
     ASUObjectCache *cache = [ASUObjectCache sharedInstance];
     [cache.references setObject:rewardBasedVideoAd forKey:[rewardBasedVideoAd asu_referenceKey]];
     return (__bridge ASURewardBasedVideoAdReference)rewardBasedVideoAd;
@@ -131,11 +150,11 @@ void ASUSetRewardBasedVideoAdCallbacks(ASURewardBasedVideoAdReference rewardBase
     internalRewardBasedVideoAd.willLeaveCallback = willLeaveCallback;
 }
 
-void ASURequestRewardBasedVideoAd(ASURewardBasedVideoAdReference rewardBasedVideoAd,
-                               const char *adUnitID) {
-    NSLog(@"%s %s %s", __FUNCTION__, "AdUnitID is", adUnitID);
-    ASURewardBasedVideoAd *internalRewardBasedVideoAd =(__bridge ASURewardBasedVideoAd *)rewardBasedVideoAd;
-    [internalRewardBasedVideoAd loadAdWithAdUnitId:[[NSString alloc] initWithUTF8String:adUnitID]];
+void ASULoadRewardBasedVideoAd(ASURewardBasedVideoAdReference rewardBasedVideoAd, ASUAdRequestReference adRequest) {
+    NSLog(@"%s", __FUNCTION__);
+    ASURewardBasedVideoAd *internalRewardBasedVideoAd = (__bridge ASURewardBasedVideoAd *)rewardBasedVideoAd;
+    ASUAdRequest *internalAdRequest = (__bridge ASUAdRequest *)adRequest;
+    [internalRewardBasedVideoAd loadAdWithAdRequest:[internalAdRequest asAdRequest]];
 }
 
 void ASUShowRewardBasedVideoAd(ASURewardBasedVideoAdReference rewardBasedVideoAd) {
@@ -146,6 +165,28 @@ void ASUShowRewardBasedVideoAd(ASURewardBasedVideoAdReference rewardBasedVideoAd
 
 BOOL ASURewardBasedVideoAdReady(ASURewardBasedVideoAdReference rewardBasedVideoAd) {
     NSLog(@"%s", __FUNCTION__);
-    ASURewardBasedVideoAd *internalRewardBasedVideoAd =(__bridge ASURewardBasedVideoAd *)rewardBasedVideoAd;
+    ASURewardBasedVideoAd *internalRewardBasedVideoAd = (__bridge ASURewardBasedVideoAd *)rewardBasedVideoAd;
     return [internalRewardBasedVideoAd isReady];
+}
+
+ASUAdRequestReference ASUCreateAdRequest(void) {
+    NSLog(@"%s", __FUNCTION__);
+    ASUAdRequest *adRequest = [[ASUAdRequest alloc] init];
+    ASUObjectCache *cache = [ASUObjectCache sharedInstance];
+    [cache.references setObject:adRequest forKey:[adRequest asu_referenceKey]];
+    return (__bridge ASUAdRequestReference)adRequest;
+}
+
+void ASUAddTestDevice(ASUAdRequestReference adRequest,
+                      const char *testDevice) {
+    NSLog(@"%s %s %s", __FUNCTION__, "TestDevice is", testDevice);
+    ASUAdRequest *internalAdRequest = (__bridge ASUAdRequest *)adRequest;
+    [internalAdRequest addTestDevice:[[NSString alloc] initWithUTF8String:testDevice]];
+}
+
+void ASUAddSupportedFormat(ASUAdRequestReference adRequest,
+                           const char *supportedFormat) {
+    NSLog(@"%s %s %s", __FUNCTION__, "SupportedFormat is", supportedFormat);
+    ASUAdRequest *internalAdRequest = (__bridge ASUAdRequest *)adRequest;
+    [internalAdRequest addTestDevice:[[NSString alloc] initWithUTF8String:supportedFormat]];
 }
