@@ -8,24 +8,24 @@ Check **samples** directory for sample projects.
 Please check out our **[releases](//github.com/Netvent/appsamurai-adsdk-unity/releases)** for the latest official version of the plugin.
 ### Import the Mobile Ads Unity plugin
 Open your project in the Unity editor. Select **Assets > Import Package > Custom Package** and find the AppSamuraiAdsPlugin.unitypackage file you downloaded.
-![Import Custom Package](docs/screenshots/import-custom-package.png?raw=true)
+![Import Custom Package](docs/screenshots/import-custom-package.png?raw=true "Import Custom Package")
 
 Make sure all of the files are selected and click **Import**.
-![Select all Files](docs/screenshots/select-all-packages.png?raw=true)
+![Select all Files](docs/screenshots/select-all-packages.png?raw=true "Select all Files")
 
 Make sure all of the related files imported.
-![Check Files](docs/screenshots/import-validation-screen.png?raw=true)
+![Check Files](docs/screenshots/import-validation-screen.png?raw=true "Check Files")
 ### Download Platform Specific Libraries With Play Service Resolver
 App Samurai Ads Unity Plugin uses Play Service Resolver for downloading platform ( Android, iOS ) libraries. 
 #### Step 1
 Download the latest version of Play Service Resolver with name play-services-resolver-x.y.z.w.unitypackage from **[here](https://github.com/googlesamples/unity-jar-resolver/releases)**
 #### Step 2
 Export Play Service Resolver package
-![Import Play Services Resolver](docs/screenshots/import-playservicesresolver.png?raw=true)
+![Import Play Services Resolver](docs/screenshots/import-playservicesresolver.png?raw=true "Import Play Services Resolver")
 #### Step 3
 Run Play Service Resolver for Android and iOS separately if it doesn't start automatically.
-![Run Android Resolver](docs/screenshots/android-resolver.png?raw=true)
-![Run iOS Resolver](docs/screenshots/android-resolver.png?raw=true)
+![Run Android Resolver](docs/screenshots/android-resolver.png?raw=true "Run Android Resolver")
+![Run iOS Resolver](docs/screenshots/android-resolver.png?raw=true "Run iOS Resolver")
 #### Step 4
 Check if libraries downloaded successfully. Check /Assets/Plugins/Android directory for Android libraries ( aar and jar files ) and check for /Assets/Plugins/IOS/Frameworks for iOS frameworks.
 #### Android Libraries
@@ -37,11 +37,11 @@ com.appsamurai.adsdk:unity
 ------- com.squareup.retrofit2:retrofit
 ------- com.squareup.retrofit2:converter-gson
 #### iOS Libraries
-Play Service Resolver will help you to install all dependent libraries via CocoaPods easily. Please make sure you handle configurations for correct usage.
+Play Service Resolver will help you to install all dependent libraries via CocoaPods easily. Please make sure you handle configurations for correct usage.  Set `Always Embed Swift Standard Libraries` and `Embed Modules` to `Yes`
 
-![Always Embed Swift Standard Libraries](docs/screenshots/always-embed-swift-standard-libraries.png?raw=true)
+![Always Embed Swift Standard Libraries](docs/screenshots/always-embed-swift-standard-libraries.png?raw=true "Always Embed Swift Standard Libraries")
 
-![Embed Modules](docs/screenshots/embed-modules.png?raw=true)
+![Embed Modules](docs/screenshots/embed-modules.png?raw=true "Embed Modules")
 ## Initialization
 ### SDK Initialization
 ```csharp
@@ -229,7 +229,6 @@ public void CreateAd () {
     interstitial.OnAdLeavingApplication += HandleInterstitialAdLeavingApplication;
 }
 ```
-
 #### Supported Media Formats
 Interstitial ad type supports both HTML and video ad formats. But AdListener methods are identical for both HTML and video. If you just want to show some of the ad formats you can specify while creating AdRequest.
 ```csharp
